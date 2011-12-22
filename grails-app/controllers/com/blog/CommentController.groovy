@@ -1,5 +1,7 @@
 package com.blog
 
+import grails.plugins.springsecurity.Secured
+
 import org.springframework.dao.DataIntegrityViolationException
 
 class CommentController {
@@ -15,10 +17,12 @@ class CommentController {
         [commentInstanceList: Comment.list(params), commentInstanceTotal: Comment.count()]
     }
 
+	@Secured(['ROLE_BLOGGER', 'ROLE_COMMENTER'])
     def create() {
         [commentInstance: new Comment(params)]
     }
 
+	@Secured(['ROLE_BLOGGER', 'ROLE_COMMENTER'])
     def save() {
         def commentInstance = new Comment(params)
         if (!commentInstance.save(flush: true)) {
@@ -41,6 +45,7 @@ class CommentController {
         [commentInstance: commentInstance]
     }
 
+	@Secured(['ROLE_BLOGGER', 'ROLE_COMMENTER'])
     def edit() {
         def commentInstance = Comment.get(params.id)
         if (!commentInstance) {
@@ -52,6 +57,7 @@ class CommentController {
         [commentInstance: commentInstance]
     }
 
+	@Secured(['ROLE_BLOGGER', 'ROLE_COMMENTER'])
     def update() {
         def commentInstance = Comment.get(params.id)
         if (!commentInstance) {
@@ -82,6 +88,7 @@ class CommentController {
         redirect(action: "show", id: commentInstance.id)
     }
 
+	@Secured(['ROLE_BLOGGER'])
     def delete() {
         def commentInstance = Comment.get(params.id)
         if (!commentInstance) {

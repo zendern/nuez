@@ -1,5 +1,7 @@
 package com.blog
 
+import grails.plugins.springsecurity.Secured
+
 import org.springframework.dao.DataIntegrityViolationException
 
 class EntryController {
@@ -15,10 +17,12 @@ class EntryController {
         [entryInstanceList: Entry.list(params), entryInstanceTotal: Entry.count()]
     }
 
+	@Secured(['ROLE_BLOGGER'])
     def create() {
         [entryInstance: new Entry(params)]
     }
 
+	@Secured(['ROLE_BLOGGER'])
     def save() {
         def entryInstance = new Entry(params)
         if (!entryInstance.save(flush: true)) {
@@ -41,6 +45,7 @@ class EntryController {
         [entryInstance: entryInstance]
     }
 
+	@Secured(['ROLE_BLOGGER'])
     def edit() {
         def entryInstance = Entry.get(params.id)
         if (!entryInstance) {
@@ -52,6 +57,7 @@ class EntryController {
         [entryInstance: entryInstance]
     }
 
+	@Secured(['ROLE_BLOGGER'])
     def update() {
         def entryInstance = Entry.get(params.id)
         if (!entryInstance) {
@@ -82,6 +88,7 @@ class EntryController {
         redirect(action: "show", id: entryInstance.id)
     }
 
+	@Secured(['ROLE_BLOGGER'])
     def delete() {
         def entryInstance = Entry.get(params.id)
         if (!entryInstance) {
