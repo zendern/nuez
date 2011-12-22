@@ -32,6 +32,17 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${entryInstance?.comments}">
+				<li class="fieldcontain">
+					<span id="comments-label" class="property-label"><g:message code="entry.comments.label" default="Comments" /></span>
+					
+						<g:each in="${entryInstance.comments}" var="c">
+						<span class="property-value" aria-labelledby="comments-label"><g:link controller="comment" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${entryInstance?.title}">
 				<li class="fieldcontain">
 					<span id="title-label" class="property-label"><g:message code="entry.title.label" default="Title" /></span>
