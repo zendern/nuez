@@ -7,20 +7,71 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title><g:layoutTitle default="Grails"/></title>
+		<title><g:layoutTitle default="Nuez"/></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
 		<link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon">
-		<link rel="apple-touch-icon" href="${resource(dir: 'images', file: 'apple-touch-icon.png')}">
-		<link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
+		<link href='http://fonts.googleapis.com/css?family=Frijole' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap.css')}">
+		<style type="text/css">
+	    body {
+	      padding-top: 80px;
+	    }
+		ul {
+			list-style: none;
+		}
+	    </style>	
+	    <g:javascript library="jquery" />	
 		<g:layoutHead/>
         <r:layoutResources />
 	</head>
 	<body>
-		<div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'grails_logo.png')}" alt="Grails"/></a></div>
+		<div class="topbar">
+			<div class="topbar-inner">
+				<div class="container-fluid">
+					<a class="brand" href="#">
+						<div style="font-family: Frijole;font-size: 38px;color:#FFEF00;">Nuez</div>
+						<div style="font-size:9px;">The blog about anything....really...Anything!</div>	
+					</a>
+					<ul class="nav" style="padding-top:27px;padding-left:20px;">
+						<li id="homeTab">
+							<g:link controller="home">
+								Home
+							</g:link>
+						</li>
+						<li id="postsTab">
+							<g:link controller="entry" action="list">							
+								All Posts
+							</g:link>
+						</li>
+						<li id="popularTab"><a href="#contact">Most Popular</a></li>
+						<li id="aboutTab">
+							<g:link controller="about" action="index">About</g:link>
+						</li>
+					</ul>
+					<ul style="padding-top:27px;float:right;">
+						<sec:ifLoggedIn>
+							<li style="color:#99BF38;padding-top:10px;">
+								Your signed in as <sec:loggedInUserInfo field="username"/>
+							<li>
+							<li>
+								<g:link action="index" controller="logout">Logout</g:link>
+							</li>
+						</sec:ifLoggedIn>
+						<sec:ifNotLoggedIn>						
+						<li>
+							<g:link action="auth" controller="login">Login</g:link>
+						</li>
+						</sec:ifNotLoggedIn>						
+					</ul>
+				</div>
+			</div>
+		</div>
 		<g:layoutBody/>
-		<div class="footer" role="contentinfo"></div>
+		
+		<footer>
+			<p>&copy; Company 2011</p>
+		</footer>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 		<g:javascript library="application"/>
         <r:layoutResources />
