@@ -1,50 +1,44 @@
-
 <%@ page import="com.blog.Entry" %>
 <!doctype html>
 <html>
 	<head>
 		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'entry.label', default: 'Entry')}" />
-		<title><g:message code="default.list.label" args="[entityName]" /></title>
+		<title>Nuez | All Posts</title>
 	</head>
 	<body>
-		<a href="#list-entry" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
-		<div id="list-entry" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
-			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
+		<div class="content">
+			<g:each var="blogEntry" in="${entryInstanceList}">
+				<sec:ifAllGranted roles="ROLE_BLOGGER">
+					<div class="buttonWrapper">
+						<g:link class="btn primary pull-left" controller="entry" action="create">Add a new post</g:link>
+						<g:form controller="entry" action="delete" id="${blogEntry.id}" class="pull-left">						
+							<g:submitButton class="btn primary pull-left" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" value="Delete this post" name="delete"></g:submitButton>
+						</g:form>
+						<g:link class="btn primary" controller="entry" action="edit" id="${blogEntry.id}">Update this post</g:link>
+					</div>
+					<hr style="width:98%;margin:0 auto;padding-top:15px;"/>
+				</sec:ifAllGranted>
+				<div class="blogPost">
+					<h3>${blogEntry.title}</h3>
+					<p>
+						${blogEntry.entry}
+					</p>
+				</div>
+			</g:each>
+			<g:if test="${entryInstanceList?.size() == 0}">
+				<div style="width: 525px;text-align: center;" class="center">
+					<h2>Sorry there has been nothing written yet. Must be a slow day :(</h2>
+					<sec:ifAllGranted roles="ROLE_BLOGGER">
+						<g:link class="btn primary" controller="entry" action="create">Add a new post</g:link>
+					</sec:ifAllGranted>
+				</div>
 			</g:if>
-			<table>
-				<thead>
-					<tr>
-					
-						<g:sortableColumn property="entry" title="${message(code: 'entry.entry.label', default: 'Entry')}" />
-					
-						<g:sortableColumn property="title" title="${message(code: 'entry.title.label', default: 'Title')}" />
-					
-					</tr>
-				</thead>
-				<tbody>
-				<g:each in="${entryInstanceList}" status="i" var="entryInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${entryInstance.id}">${fieldValue(bean: entryInstance, field: "entry")}</g:link></td>
-					
-						<td>${fieldValue(bean: entryInstance, field: "title")}</td>
-					
-					</tr>
-				</g:each>
-				</tbody>
-			</table>
 			<div class="pagination">
 				<g:paginate total="${entryInstanceTotal}" />
 			</div>
 		</div>
+		<r:script>
+        	$("#postsTab").addClass("active")
+      	</r:script>
 	</body>
 </html>

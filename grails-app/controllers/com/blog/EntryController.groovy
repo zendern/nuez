@@ -13,7 +13,7 @@ class EntryController {
     }
 
     def list() {
-        params.max = Math.min(params.max ? params.int('max') : 10, 100)
+        params.max = Math.min(params.max ? params.int('max') : 1, 1)
         [entryInstanceList: Entry.list(params), entryInstanceTotal: Entry.count()]
     }
 
