@@ -15,7 +15,7 @@
 		margin: 60px auto;
 		text-align: left;
 		border: 1px solid #aab;
-		background-color: #f0f0fa;
+		background-color: #2E2E2E;
 		-moz-box-shadow: 2px 2px 2px #eee;
 		-webkit-box-shadow: 2px 2px 2px #eee;
 		-khtml-box-shadow: 2px 2px 2px #eee;
@@ -24,9 +24,9 @@
 
 	#login .inner .fheader {
 		padding: 18px 26px 14px 26px;
-		background-color: #f7f7ff;
+		background-color: #2E2E2E;
 		margin: 0px 0 14px 0;
-		color: #2e3741;
+		color: #fff;
 		font-size: 18px;
 		font-weight: bold;
 	}
@@ -47,6 +47,7 @@
 	#login .inner .cssform label {
 		font-weight: bold;
 		float: left;
+		color:#fff;
 		text-align: right;
 		margin-left: -105px;
 		width: 110px;
@@ -71,7 +72,7 @@
 
 	#login .inner .login_message {
 		padding: 6px 25px 20px 25px;
-		color: #c33;
+		color: #fff;
 	}
 
 	#login .inner .text_ {
@@ -110,7 +111,7 @@
 			</p>
 
 			<p>
-				<input type='submit' id="submit" value='${message(code: "springSecurity.login.button")}'/>
+				<input class="btn primary large" type='submit' id="submit" value='${message(code: "springSecurity.login.button")}'/>
 			</p>
 		</form>
 	</div>
