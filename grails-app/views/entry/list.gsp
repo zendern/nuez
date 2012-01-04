@@ -18,12 +18,15 @@
 					</div>
 					<hr style="width:98%;margin:0 auto;padding-top:15px;"/>
 				</sec:ifAllGranted>
-				<div class="blogPost">
+				<div class="blogPost well">
 					<h3>${blogEntry.title}</h3>
+					<p>
+						<g:formatDate date="${blogEntry.dateCreated}" format="yyyy-MM-dd HH:mm:ss"/>
+					</p>
 					<p>
 						${blogEntry.entry}
 					</p>
-					<g:link controller="entry" action="show" id="${blogEntry.id}">Permalink</g:link>
+					<g:link controller="entry" action="show" id="${blogEntry.id}" class="pull-right">Permalink</g:link>
 				</div>
 			</g:each>
 			<g:if test="${entryInstanceList?.size() == 0}">
@@ -35,7 +38,7 @@
 				</div>
 			</g:if>
 			<div class="pagination">
-				<g:paginate total="${entryInstanceTotal}" />
+				<g:paginate total="${entryInstanceTotal}" prev="Newer" next="Older" maxsteps="5" max="5"/>
 			</div>
 		</div>
 		<r:script>

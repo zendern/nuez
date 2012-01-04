@@ -2095,7 +2095,8 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
 }
 .pagination {
   height: 36px;
-  margin: 18px 0;
+  width: 325px;
+  margin: 0 auto;
 }
 .pagination a, .pagination span {
   padding: 0 14px;
@@ -2469,6 +2470,7 @@ fieldset.buttons{
 .blogPost{
 	margin:0 auto;
 	width:900px;
+	margin-top:15px;
 }
 h3{
 	font-family: Frijole;
@@ -2476,4 +2478,62 @@ h3{
 }
 .center{
 	margin:0 auto;	
+}
+
+/* MESSAGES AND ERRORS */
+
+.errors,
+.message {
+	font-size: 0.8em;
+	line-height: 2;
+	margin: 1em 2em;
+	padding: 0.5em;
+}
+
+.message {
+	background: #f3f3ff;
+	border: 1px solid #b2d1ff;
+	color: #006dba;
+	   -moz-box-shadow: 0 0 0.25em #b2d1ff;
+	-webkit-box-shadow: 0 0 0.25em #b2d1ff;
+	        box-shadow: 0 0 0.25em #b2d1ff;
+}
+
+.errors {
+	background: #fff3f3;
+	border: 1px solid #ffaaaa;
+	color: #cc0000;
+	   -moz-box-shadow: 0 0 0.25em #ff8888;
+	-webkit-box-shadow: 0 0 0.25em #ff8888;
+	        box-shadow: 0 0 0.25em #ff8888;
+}
+
+.errors ul,
+.message {
+	padding: 0;
+}
+
+.errors li {
+	list-style: none;
+	background: transparent url(../images/skin/exclamation.png) 0 50% no-repeat;
+	text-indent: 22px;
+}
+
+.message {
+	background: transparent url(../images/skin/information.png) 0 50% no-repeat;
+	text-indent: 22px;
+}
+
+/* form fields with errors */
+
+.error input, .error select, .error textarea {
+	background: #fff3f3;
+	border-color: #ffaaaa;
+	color: #cc0000;
+}
+
+.error input:focus, .error select:focus, .error textarea:focus {
+	   -moz-box-shadow: 0 0 0.5em #ffaaaa;
+	-webkit-box-shadow: 0 0 0.5em #ffaaaa;
+	        box-shadow: 0 0 0.5em #ffaaaa;
 }

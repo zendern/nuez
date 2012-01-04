@@ -17,11 +17,14 @@
 			</div>
 			<hr style="width:98%;margin:0 auto;padding-top:15px;"/>
 		</sec:ifAllGranted>
-		<div class="blogPost">
-			<h3 style="float:left;">
+		<div class="blogPost well">
+			<h3>
 				${entryInstance.title}
 			</h3>
-			<p style="clear:both;">
+			<p>
+				<g:formatDate date="${entryInstance.dateCreated}" format="yyyy-MM-dd HH:mm:ss"/>
+			</p>
+			<p>
 				${entryInstance.entry}
 			</p>
 		</div>
