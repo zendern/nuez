@@ -23,6 +23,7 @@
 					<p>
 						${blogEntry.entry}
 					</p>
+					<g:link controller="entry" action="show" id="${blogEntry.id}">Permalink</g:link>
 				</div>
 			</g:each>
 			<g:if test="${entryInstanceList?.size() == 0}">
