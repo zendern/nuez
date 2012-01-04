@@ -68,8 +68,8 @@
 		</div>
 		<g:layoutBody/>
 		
-		<footer>
-			<p>&copy; Company 2011</p>
+		<footer class="footer">
+			<p>&copy; Company 2012</p>
 		</footer>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 		<g:javascript library="application"/>
