@@ -44,7 +44,6 @@
 								All Posts
 							</g:link>
 						</li>
-						<li id="popularTab"><a href="#contact">Most Popular</a></li>
 						<li id="aboutTab">
 							<g:link controller="about" action="index">About</g:link>
 						</li>
