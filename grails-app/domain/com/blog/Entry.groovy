@@ -4,10 +4,22 @@ class Entry {
 
 	String title
 	String entry
+	Date dateCreated
+	Date lastUpdated
 	
 	static hasMany = [comments: Comment]
-
+	
+	static mapping = {
+		sort dateCreated : "desc"
+	}
 	static constraints = {
-		entry(size:0..65535)
+		title(blank: false, size:0..255)
+		entry(blank: false, size:0..65535)
     }
+	def beforeInsert() {
+		dateCreated = new Date()
+	}
+	def beforeUpdate() {
+		lastUpdated = new Date()
+	}
 }
