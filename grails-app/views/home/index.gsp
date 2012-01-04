@@ -28,37 +28,20 @@
 					</p>
 				</div>
 	
-				<!-- Example row of columns -->
-				<div class="row">
-					<div class="span16">
-						<h2>Heading</h2>
-						<p>Etiam porta sem malesuada magna mollis euismod. Integer
-							posuere erat a ante venenatis dapibus posuere velit aliquet.
-							Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
-							vestibulum. Duis mollis, est non commodo luctus, nisi erat
-							porttitor ligula, eget lacinia odio sem nec elit.</p>
-						<p>
-							<a class="btn" href="#">View more &raquo;</a>
-						</p>
+				<g:each var="${blog}" in="${mostRecentEntries}">				
+					<div class="row">
+						<div class="span16">
+							<h2>${blog.title}</h2>
+							<p>
+								${blog.entry?.substring(0, 450) + "..."}
+							</p>
+							<p>
+								<g:link controller="entry" action="show" id="${blog.id}">View more &raquo;</g:link>
+							</p>
+						</div>
 					</div>
-				</div>
-	
-				<hr>
-	
-				<!-- Example row of columns -->
-				<div class="row">
-					<div class="span16">
-						<h2>Heading</h2>
-						<p>Etiam porta sem malesuada magna mollis euismod. Integer
-							posuere erat a ante venenatis dapibus posuere velit aliquet.
-							Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
-							vestibulum. Duis mollis, est non commodo luctus, nisi erat
-							porttitor ligula, eget lacinia odio sem nec elit.</p>
-						<p>
-							<a class="btn" href="#">View more &raquo;</a>
-						</p>
-					</div>
-				</div>
+					<hr>
+				</g:each>
 			</div>
 		</div>
 		<r:script>
