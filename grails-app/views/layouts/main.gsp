@@ -29,10 +29,10 @@
 		<div class="topbar">
 			<div class="topbar-inner">
 				<div class="container-fluid">
-					<a class="brand" href="#">
+					<g:link class="brand" controller="home">
 						<div style="font-family: Frijole;font-size: 38px;color:#FFEF00;">Nuez</div>
 						<div style="font-size:9px;">The blog about anything....really...Anything!</div>	
-					</a>
+					</g:link>
 					<ul class="nav" style="padding-top:27px;padding-left:20px;">
 						<li id="homeTab">
 							<g:link controller="home">
