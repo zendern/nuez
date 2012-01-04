@@ -8,6 +8,6 @@ class Entry {
 	static hasMany = [comments: Comment]
 
 	static constraints = {
-		entry(widget:"textArea")
+		entry(size:0..65535)
     }
 }
