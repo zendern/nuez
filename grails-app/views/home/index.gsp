@@ -27,9 +27,9 @@
 				<!-- Main hero unit for a primary marketing message or call to action -->
 				<div class="hero-unit">
 					<h1>Hello!</h1>
-					<p>Welcome to the Nuez blog. Please feel free to login and blog about any "nutty" topic that you want to talk about. Enjoy!</p>
+					<p>Welcome to the Nuez blog. Please feel free to login and blog about any topic that you want to talk about. Enjoy!</p>
 					<p>
-						<a class="btn primary large">Learn more &raquo;</a>
+						<g:link class="btn primary large" controller="about">Learn more &raquo;</g:link>
 					</p>
 				</div>
 	
