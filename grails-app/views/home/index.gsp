@@ -8,18 +8,13 @@
 		<div class="container-fluid">
 			<div class="sidebar">
 				<div class="well">
-					<h5>Most Recent Posts</h5>
-					<ul>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-					</ul>
 					<h5>Ads</h5>
-					<ul>
+					<ul class="ads">
 						<li><a href="#">Buy Stuff Here</a></li>
 						<li><a href="#">And more stuff here</a></li>
-						<li><a href="#">If you like stuff you'll like this stuff...</a></li>
+						<li><a href="#">If you like stuff, you'll like this stuff...</a></li>
+						<li><a href="#">More stuff here.</a></li>
+						<li><a href="#">But I spent all my money on stuff.</a></li>
 					</ul>
 				</div>
 			</div>

@@ -2537,3 +2537,7 @@ h3{
 	-webkit-box-shadow: 0 0 0.5em #ffaaaa;
 	        box-shadow: 0 0 0.5em #ffaaaa;
 }
+
+.ads li{
+	padding:10px;
+}
