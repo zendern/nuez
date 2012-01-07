@@ -2545,3 +2545,21 @@ h3{
 	width:125px;
 	margin: 0 auto;
 }
+
+#commentList{
+	padding:10px;
+}
+
+#commentList li {
+	padding:5px;
+}
+
+.nameComment{
+	font-size: 20px; 
+	font-family: Frijole;
+	padding-right:10px;	
+}
+.dataComment{
+	font-size: 13px;
+	font-style: italic; 
+}

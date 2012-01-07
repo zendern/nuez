@@ -7,8 +7,13 @@ class Comment {
 	String name
 	String comment
 	Date dateCreated
+	Entry entry
 	
 	static belongsTo = Entry
+	
+	static mapping = {
+		sort dateCreated : "desc"
+	}
 	
     static constraints = {
 		name(blank:false, size:0..255)

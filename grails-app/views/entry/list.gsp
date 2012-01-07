@@ -18,16 +18,7 @@
 					</div>
 					<hr style="width:98%;margin:0 auto;padding-top:15px;"/>
 				</sec:ifAllGranted>
-				<div class="blogPost well">
-					<h3>${blogEntry.title}</h3>
-					<p>
-						<g:formatDate date="${blogEntry.dateCreated}" format="yyyy-MM-dd HH:mm:ss"/>
-					</p>
-					<p>
-						${blogEntry.entry}
-					</p>
-					<g:link controller="entry" action="show" id="${blogEntry.id}" class="pull-right">Permalink</g:link>
-				</div>
+				<g:render template="viewPost" bean="${blogEntry}" var="blogEntry" />
 			</g:each>
 			<g:if test="${entryInstanceList?.size() == 0}">
 				<div style="width: 525px;text-align: center;" class="center">
