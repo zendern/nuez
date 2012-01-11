@@ -33,7 +33,12 @@
 						<div class="span16">
 							<h2>${blog.title}</h2>
 							<p>
-								${blog.entry?.substring(0, 450) + "..."}
+								<g:if test="${blog.entry?.size() > 450}">
+									${blog.entry?.substring(0, 450)}
+								</g:if>
+								<g:else>
+									${blog.entry}
+								</g:else>
 							</p>
 							<p>
 								<g:link controller="entry" action="show" id="${blog.id}">View more &raquo;</g:link>
