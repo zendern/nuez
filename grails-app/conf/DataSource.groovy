@@ -26,7 +26,7 @@ environments {
     production {
         dataSource {
 			driverClassName = "com.mysql.jdbc.Driver"
-			dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
+			dialect = "org.hibernate.dialect.MySQL5Dialect"
 			username = ""
 			password = ""
             dbCreate = "update"
