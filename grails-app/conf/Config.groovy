@@ -67,7 +67,7 @@ environments {
     }
     production {
         grails.logging.jul.usebridge = false
-		cloudfront.cdn.url = "http://your.cloudfront.net"
+		cloudfront.cdn.url = ""
     }
 }
 
