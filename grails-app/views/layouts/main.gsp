@@ -21,7 +21,7 @@
 			list-style: none;
 		}
 	    </style>	
-	    <g:javascript library="jquery" />	
+	    <g:javascript src="jquery-1.7.1.js" />
 		<g:layoutHead/>
         <r:layoutResources />
 	</head>
