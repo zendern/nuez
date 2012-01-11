@@ -25,8 +25,12 @@ environments {
     }
     production {
         dataSource {
+			driverClassName = "com.mysql.jdbc.Driver"
+			dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
+			username = ""
+			password = ""
             dbCreate = "update"
-            url = "jdbc:h2:prodDb;MVCC=TRUE"
+			url = "jdbc:mysql://localhost/nuez"
             pooled = true
             properties {
                maxActive = -1
