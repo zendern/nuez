@@ -14,7 +14,7 @@ class Entry {
 	}
 	static constraints = {
 		title(blank: false, size:0..255)
-		entry(blank: false, size:0..65535)
+		entry(blank: false, size:0..1000)
     }
 	def beforeInsert() {
 		dateCreated = new Date()
