@@ -10,9 +10,9 @@
 		<title><g:layoutTitle default="Nuez"/></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
-		<link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon">
+		<link rel="shortcut icon" href="${grailsApplication.config.cloudfront.cdn.url}${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon">
 		<link href='http://fonts.googleapis.com/css?family=Frijole' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap.css')}">
+		<link rel="stylesheet" href="${grailsApplication.config.cloudfront.cdn.url}${resource(dir: 'css', file: 'bootstrap.css')}">
 		<style type="text/css">
 	    body {
 	      padding-top: 80px;
@@ -21,7 +21,7 @@
 			list-style: none;
 		}
 	    </style>	
-	    <g:javascript src="jquery-1.7.1.js" />
+	    <script type="text/javascript" src="${grailsApplication.config.cloudfront.cdn.url}${resource(dir: 'js', file: 'jquery-1.7.1.js')}"></script>
 		<g:layoutHead/>
         <r:layoutResources />
 	</head>
@@ -71,8 +71,10 @@
 		<footer class="footer">
 			<p>&copy; Company 2012</p>
 		</footer>
-		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
-		<g:javascript library="application"/>
+		<div id="spinner" class="spinner" style="display:none;">
+			<g:message code="spinner.alt" default="Loading&hellip;"/>
+		</div>
+        <script type="text/javascript" src="${grailsApplication.config.cloudfront.cdn.url}${resource(dir: 'js', file: 'application.js')}"></script>
         <r:layoutResources />
 	</body>
 </html>

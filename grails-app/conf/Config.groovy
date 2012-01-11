@@ -63,10 +63,11 @@ grails.hibernate.cache.queries = true
 environments {
     development {
         grails.logging.jul.usebridge = true
+		cloudfront.cdn.url = ""
     }
     production {
         grails.logging.jul.usebridge = false
-        // TODO: grails.serverURL = "http://www.changeme.com"
+		cloudfront.cdn.url = "http://your.cloudfront.net"
     }
 }
 

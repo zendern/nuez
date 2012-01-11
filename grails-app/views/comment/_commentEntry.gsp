@@ -3,7 +3,7 @@
 		<hr>
 		<div id="addComment">
 			<h3 class="pull-left">Add a Comment</h3>
-			<g:img file="add.png" alt="+" style="padding-left:10px;padding-top:10px;"/>
+			<img alt="+" src="${grailsApplication.config.cloudfront.cdn.url}${resource(dir: 'images', file: 'add.png')}" style="padding-left:10px;padding-top:10px;"/>
 		</div>
 		<div id="commentForm" style="clear:both;">
 			<div class="message" id="commentMessage" style="display:none;"></div>
