@@ -56,5 +56,7 @@ environments {
                testOnReturn=true
                validationQuery="SELECT 1"
             }
+	}
     }
+}
 }
