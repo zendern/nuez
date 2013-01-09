@@ -13,23 +13,24 @@ hibernate {
 environments {
     development {
         dataSource {
-			driverClassName = "com.mysql.jdbc.Driver"
-			dialect = "org.hibernate.dialect.MySQL5Dialect"
-			username = "<username>"
-			password = "<password>"
+            driverClassName = "com.mysql.jdbc.Driver"
+            dialect = "org.hibernate.dialect.MySQL5Dialect"
+            username = "codemash"
+            password = "codemash"
             dbCreate = "update"
-			url = "jdbc:mysql://<ec2-hostname>/nuez"
+            url = "jdbc:mysql://<ec2-hostname>:3306/nuez"
             pooled = true
             properties {
-               maxActive = -1
-               minEvictableIdleTimeMillis=1800000
-               timeBetweenEvictionRunsMillis=1800000
-               numTestsPerEvictionRun=3
-               testOnBorrow=true
-               testWhileIdle=true
-               testOnReturn=true
-               validationQuery="SELECT 1"
+                maxActive = -1
+                minEvictableIdleTimeMillis = 1800000
+                timeBetweenEvictionRunsMillis = 1800000
+                numTestsPerEvictionRun = 3
+                testOnBorrow = true
+                testWhileIdle = true
+                testOnReturn = true
+                validationQuery = "SELECT 1"
             }
+        }
     }
     test {
         dataSource {
@@ -39,24 +40,23 @@ environments {
     }
     production {
         dataSource {
-			driverClassName = "com.mysql.jdbc.Driver"
-			dialect = "org.hibernate.dialect.MySQL5Dialect"
-			username = "<username>"
-			password = "<password>"
+            driverClassName = "com.mysql.jdbc.Driver"
+            dialect = "org.hibernate.dialect.MySQL5Dialect"
+            username = "<username>"
+            password = "<password>"
             dbCreate = "update"
-			url = "jdbc:mysql://<ec2-hostname>/nuez"
+            url = "jdbc:mysql://<ec2-hostname>:3306/nuez"
             pooled = true
             properties {
-               maxActive = -1
-               minEvictableIdleTimeMillis=1800000
-               timeBetweenEvictionRunsMillis=1800000
-               numTestsPerEvictionRun=3
-               testOnBorrow=true
-               testWhileIdle=true
-               testOnReturn=true
-               validationQuery="SELECT 1"
+                maxActive = -1
+                minEvictableIdleTimeMillis = 1800000
+                timeBetweenEvictionRunsMillis = 1800000
+                numTestsPerEvictionRun = 3
+                testOnBorrow = true
+                testWhileIdle = true
+                testOnReturn = true
+                validationQuery = "SELECT 1"
             }
-	}
+        }
     }
-}
 }
