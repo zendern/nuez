@@ -59,4 +59,25 @@ environments {
             }
         }
     }
+    aws {
+        dataSource {
+            dbCreate = "update"
+            url = "jdbc:mysql://${System.getProperty('RDS_HOSTNAME')}:${System.getProperty('RDS_PORT')}/ebdb"
+            driverClassName = "com.mysql.jdbc.Driver"
+            username = System.getProperty('RDS_USERNAME')
+            password = System.getProperty('RDS_PASSWORD')
+            loggingSql = true
+            pooled = true
+            properties {
+                maxActive = -1
+                minEvictableIdleTimeMillis=1800000
+                timeBetweenEvictionRunsMillis=1800000
+                numTestsPerEvictionRun=3
+                testOnBorrow=true
+                testWhileIdle=true
+                testOnReturn=true
+                validationQuery="SELECT 1"
+            }
+        }
+    }
 }
